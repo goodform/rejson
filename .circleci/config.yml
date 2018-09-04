@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: 'redislabsmodules/rmbuilder:latest'
+      - image: 'goodform/rmbuilder:latest'
     steps:
       - checkout
       - run:
@@ -24,7 +24,7 @@ jobs:
             - build
   package_branch:
     docker:
-      - image: 'redislabsmodules/rmbuilder:latest'
+      - image: 'goodform/rmbuilder:latest'
     steps:
       - attach_workspace:
           at: /workspace
@@ -42,7 +42,7 @@ jobs:
           path: /workspace/build
   package_release:
     docker:
-      - image: 'redislabsmodules/rmbuilder:latest'
+      - image: 'goodform/rmbuilder:latest'
     steps:
       - attach_workspace:
           at: /workspace
@@ -66,7 +66,7 @@ jobs:
           path: /workspace/build
   deploy_branch:
     docker:
-      - image: 'redislabsmodules/rmbuilder:latest'
+      - image: 'goodform/rmbuilder:latest'
     steps:
       - attach_workspace:
           at: /workspace
@@ -77,7 +77,7 @@ jobs:
             public-read --recursive --exclude "*" --include "*.zip"
   deploy_release:
     docker:
-      - image: 'redislabsmodules/rmbuilder:latest'
+      - image: 'goodform/rmbuilder:latest'
     steps:
       - attach_workspace:
           at: /workspace
@@ -89,7 +89,7 @@ jobs:
   
   deploy_docs:
     docker:
-      - image: 'redislabsmodules/rmbuilder:latest'
+      - image: 'goodform/rmbuilder:latest'
     steps:
       - checkout
       - run:
@@ -98,7 +98,7 @@ jobs:
       - run:
           name: Deploy Docs to S3
           command: >-
-            aws s3 cp site s3://oss.redislabs.com/$WEBSITE_FOLDER/ --acl
+            aws s3 cp site s3://goodform.org/$WEBSITE_FOLDER/ --acl
             public-read --recursive 
 workflows:
   version: 2

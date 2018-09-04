@@ -1,8 +1,8 @@
 display_name: ReJSON
-author: Redis Labs
-email: redismodules@redislabs.com
+author: goodform
+email: freeandopenredismodules@gmail.com
 description: Native JSON Data Type for Redis
-homepage: http://rejson.io
+homepage: https://goodform.org/rejson
 license: AGPLv3
 command_line_args: ""
 min_redis_version: "4.0"

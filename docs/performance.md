@@ -16,7 +16,7 @@ unoptimized.
 ### A smallish object
 
 We test a JSON value that, while purely synthetic, is interesting. The test subject is
-[/test/files/pass-100.json](https://github.com/RedisLabsModules/rejson/blob/master/test/files/pass-100.json),
+[/test/files/pass-100.json](https://github.com/goodform/rejson/blob/master/test/files/pass-100.json),
 who weighs in at 380 bytes and is nested. We first test SETting it, then GETting it using several
 different paths:
 
@@ -27,7 +27,7 @@ different paths:
 ### A bigger array
 
 Moving on to bigger values, we use the 1.4 kB array in
-[/test/files/pass-jsonsl-1.json](https://github.com/RedisLabsModules/rejson/blob/master/test/files/pass-jsonsl-1.json):
+[/test/files/pass-jsonsl-1.json](https://github.com/goodform/rejson/blob/master/test/files/pass-jsonsl-1.json):
 
 ![ReJSONBenchmark pass-jsonsl-1.json](images/bench_pass_jsonsl_1.png)
 
@@ -36,7 +36,7 @@ Moving on to bigger values, we use the 1.4 kB array in
 ### A largish object
 
 More of the same to wrap up, now we'll take on a behemoth of no less than 3.5 kB as given by
-[/test/files/pass-json-parser-0000.json](https://github.com/RedisLabsModules/rejson/blob/master/test/files/pass-json-parser-0000.json):
+[/test/files/pass-json-parser-0000.json](https://github.com/goodform/rejson/blob/master/test/files/pass-json-parser-0000.json):
 
 ![ReJSONBenchmark pass-json-parser-0000.json](images/bench_pass_json_parser_0000.png)
 
@@ -91,7 +91,7 @@ performance of the module:
 ## Comparison vs. server-side Lua scripting
 
 We compare ReJSON's performance with Redis' embedded Lua engine. For this purpose, we use the Lua
-scripts at [/benchmarks/lua](https://github.com/RedisLabsModules/rejson/tree/master/benchmarks/lua).
+scripts at [/benchmarks/lua](https://github.com/goodform/rejson/tree/master/benchmarks/lua).
 These scripts provide ReJSON's GET and SET functionality on values stored in JSON or MessagePack
 formats. Each of the different operations (set root, get root, set path and get path) is executed
 with each "engine" on objects of varying sizes. 

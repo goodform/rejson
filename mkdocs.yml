@@ -1,8 +1,8 @@
 site_name: ReJSON - a JSON data type for Redis
-site_url: http://rejson.io
+site_url: https://goodform.org
 site_favicon: 'images/favicon.png'
-repo_url: https://github.com/RedisLabsModules/ReJSON
-repo_name: RedisLabsModules/ReJSON
+repo_url: https://github.com/goodform/rejson
+repo_name: goodform/rejson
 theme: material
 
 extra:
@@ -11,9 +11,7 @@ extra:
   logo: 'images/logo.svg'
   social:
     - type: 'github'
-      link: 'https://github.com/redislabs'
-    - type: 'twitter'
-      link: 'https://twitter.com/redislabs'
+      link: 'https://github.com/goodform'
 
 markdown_extensions:
   - codehilite

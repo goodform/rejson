@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/RedisLabsModules/rejson/tree/master.svg?style=svg)](https://circleci.com/gh/RedisLabsModules/rejson/tree/master)
+[![CircleCI](https://circleci.com/gh/goodform/rejson/tree/master.svg?style=svg)](https://circleci.com/gh/goodform/rejson/tree/master)
 
 # ReJSON - a JSON data type for Redis
 
@@ -13,14 +13,14 @@ Primary features:
 
 ## Quickstart
 
-1.  [Launch ReJSON with Docker](https://redislabsmodules.github.io/rejson/#launch-rejson-with-docker)
-1.  [Use ReJSON from **any** Redis client](https://redislabsmodules.github.io/rejson/#using-rejson), e.g.:
+1.  [Launch ReJSON with Docker](https://goodform.github.io/rejson/#launch-rejson-with-docker)
+1.  [Use ReJSON from **any** Redis client](https://goodform.github.io/rejson/#using-rejson), e.g.:
 
 ![ReJSON with `redis-cli`](docs/images/demo.gif)
 
 ## Documentation
 
-Read the docs at https://redislabsmodules.github.io/rejson
+Read the docs at https://goodform.github.io/rejson
 
 ## Current limitations and known issues
 
@@ -29,8 +29,6 @@ Read the docs at https://redislabsmodules.github.io/rejson
 * Numbers are stored using 64-bit integers or doubles, and out of range values are not accepted
 
 ## Acknowledgements
-
-ReJSON is developed with <3 at [Redis Labs](https://redislabs.com).
 
 ReJSON is made possible only because of the existance of these amazing open source projects:
 

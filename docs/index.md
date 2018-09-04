@@ -9,8 +9,7 @@ Primary features:
 * Documents are stored as binary data in a tree structure, allowing fast access to sub-elements
 * Typed atomic operations for all JSON values types
 
-ReJSON is developed with <3 at [Redis Labs](https://redislabs.com). The source code is available
-at: https://github.com/RedisLabsModules/ReJSON
+The source code is available at: https://github.com/goodform/rejson
 
 ## Quickstart
 
@@ -25,7 +24,7 @@ Alternatively, you can also build and load the module yourself. [Build and Load 
 ## Launch ReJSON with Docker
 Run the following on Windows, MacOS or Linux with Docker.
 ```
-docker run -p 6379:6379 --name redis-rejson redislabs/rejson:latest
+docker run -p 6379:6379 --name redis-rejson goodform/rejson:latest
 ```
 
 ## Using ReJSON
