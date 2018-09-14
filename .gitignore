@@ -38,6 +38,7 @@
 .env/
 .env
 *.pyc
+venv/
 
 # mkdocs
 site/
