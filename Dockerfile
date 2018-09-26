@@ -7,7 +7,7 @@ RUN set -ex;\
     deps="$DEPS";\
     apt-get update; \
 	apt-get install -y --no-install-recommends $deps;\
-    pip install rmtest; 
+    pip install rmtest;
 
 # Build the source
 ADD . /REJSON
@@ -24,6 +24,6 @@ ENV LIBDIR /usr/lib/redis/modules
 WORKDIR /data
 RUN set -ex;\
     mkdir -p "$LIBDIR";
-COPY --from=builder /REJSON/src/rejson.so  "$LIBDIR"
+COPY --from=builder /REJSON/src/rejson.so "$LIBDIR"
 
 CMD ["redis-server", "--loadmodule", "/usr/lib/redis/modules/rejson.so"]

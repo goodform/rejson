@@ -8,11 +8,11 @@ test:
 docker:
 	docker pull ubuntu:latest
 	docker pull ubuntu:xenial
-	docker build . -t rejson:latest
+	docker build . -t goodform/rejson:latest
 .PHONY: docker
 
 docker_dist:
-	docker build --rm -f Dockerfile_Dist . -t goodform/rejson
+	docker build --rm -f Dockerfile . -t goodform/rejson
 
 docker_push: docker_dist
 	docker push goodform/rejson:latest
