@@ -19,7 +19,7 @@
 #include <stdlib.h>
 #include <redismodule.h>
 
-char *rmalloc_strndup(const char *s, size_t n);
+extern char *rmalloc_strndup(const char *s, size_t n);
 
 #ifdef REDIS_MODULE_TARGET /* Set this when compiling your code as a module */
 
@@ -44,7 +44,7 @@ char *rmalloc_strndup(const char *s, size_t n);
 /* This function shold be called if you are working with malloc-patched code
  * ouside of redis, usually for unit tests. Call it once when entering your unit
  * tests' main() */
-void RMUtil_InitAlloc();
+extern void RMUtil_InitAlloc();
 #endif /* REDIS_MODULE_TARGET */
 
 #endif /* __RMUTIL_ALLOC__ */

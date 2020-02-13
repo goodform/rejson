@@ -19,25 +19,25 @@ typedef struct {
 /* Construct priority queue
  * Constructs a priority_queue container adaptor object.
  */
-PriorityQueue *__newPriorityQueueSize(size_t elemSize, size_t cap, int (*cmp)(void *, void *));
+extern PriorityQueue *__newPriorityQueueSize(size_t elemSize, size_t cap, int (*cmp)(void *, void *));
 
 #define NewPriorityQueue(type, cap, cmp) __newPriorityQueueSize(sizeof(type), cap, cmp)
 
 /* Return size
  * Returns the number of elements in the priority_queue.
  */
-size_t Priority_Queue_Size(PriorityQueue *pq);
+extern size_t Priority_Queue_Size(PriorityQueue *pq);
 
 /* Access top element
  * Copy the top element in the priority_queue to ptr.
  * The top element is the element that compares higher in the priority_queue.
  */
-int Priority_Queue_Top(PriorityQueue *pq, void *ptr);
+extern int Priority_Queue_Top(PriorityQueue *pq, void *ptr);
 
 /* Insert element
  * Inserts a new element in the priority_queue.
  */
-size_t __priority_Queue_PushPtr(PriorityQueue *pq, void *elem);
+extern size_t __priority_Queue_PushPtr(PriorityQueue *pq, void *elem);
 
 #define Priority_Queue_Push(pq, elem) __priority_Queue_PushPtr(pq, &(typeof(elem)){elem})
 
@@ -46,10 +46,10 @@ size_t __priority_Queue_PushPtr(PriorityQueue *pq, void *elem);
  * one with the highest value.
  * The value of this element can be retrieved before being popped by calling Priority_Queue_Top.
  */
-void Priority_Queue_Pop(PriorityQueue *pq);
+extern void Priority_Queue_Pop(PriorityQueue *pq);
 
 /* free the priority queue and the underlying data. Does not release its elements if
  * they are pointers */
-void Priority_Queue_Free(PriorityQueue *pq);
+extern void Priority_Queue_Free(PriorityQueue *pq);
 
 #endif //__PRIORITY_QUEUE_H__

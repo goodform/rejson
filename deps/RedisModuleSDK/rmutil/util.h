@@ -27,11 +27,11 @@
 /* RedisModule utilities. */
 
 /** DEPRECATED: Return the offset of an arg if it exists in the arg list, or 0 if it's not there */
-int RMUtil_ArgExists(const char *arg, RedisModuleString **argv, int argc, int offset);
+extern int RMUtil_ArgExists(const char *arg, RedisModuleString **argv, int argc, int offset);
 
 /* Same as argExists but returns -1 if not found. Use this, RMUtil_ArgExists is kept for backwards
 compatibility. */
-int RMUtil_ArgIndex(const char *arg, RedisModuleString **argv, int argc);
+extern int RMUtil_ArgIndex(const char *arg, RedisModuleString **argv, int argc);
 
 /**
 Automatically conver the arg list to corresponding variable pointers according to a given format.
@@ -50,16 +50,16 @@ Example: If I want to parse args[1], args[2] as a long long and double, I do:
     long long l;
     RMUtil_ParseArgs(argv, argc, 1, "ld", &l, &d);
 */
-int RMUtil_ParseArgs(RedisModuleString **argv, int argc, int offset, const char *fmt, ...);
+extern int RMUtil_ParseArgs(RedisModuleString **argv, int argc, int offset, const char *fmt, ...);
 
 /**
 Same as RMUtil_ParseArgs, but only parses the arguments after `token`, if it was found.
 This is useful for optional stuff like [LIMIT [offset] [limit]]
 */
-int RMUtil_ParseArgsAfter(const char *token, RedisModuleString **argv, int argc, const char *fmt,
+extern int RMUtil_ParseArgsAfter(const char *token, RedisModuleString **argv, int argc, const char *fmt,
                           ...);
 
-int rmutil_vparseArgs(RedisModuleString **argv, int argc, int offset, const char *fmt, va_list ap);
+extern int rmutil_vparseArgs(RedisModuleString **argv, int argc, int offset, const char *fmt, va_list ap);
 
 // A single key/value entry in a redis info map
 typedef struct {
@@ -78,37 +78,37 @@ typedef struct {
 * Returns NULL if something goes wrong.
 * The resulting object needs to be freed with RMUtilRedisInfo_Free
 */
-RMUtilInfo *RMUtil_GetRedisInfo(RedisModuleCtx *ctx);
+extern RMUtilInfo *RMUtil_GetRedisInfo(RedisModuleCtx *ctx);
 
 /**
 * Free an RMUtilInfo object and its entries
 */
-void RMUtilRedisInfo_Free(RMUtilInfo *info);
+extern void RMUtilRedisInfo_Free(RMUtilInfo *info);
 
 /**
 * Get an integer value from an info object. Returns 1 if the value was found and
 * is an integer, 0 otherwise. the value is placed in 'val'
 */
-int RMUtilInfo_GetInt(RMUtilInfo *info, const char *key, long long *val);
+extern int RMUtilInfo_GetInt(RMUtilInfo *info, const char *key, long long *val);
 
 /**
 * Get a string value from an info object. The value is placed in str.
 * Returns 1 if the key was found, 0 if not
 */
-int RMUtilInfo_GetString(RMUtilInfo *info, const char *key, const char **str);
+extern int RMUtilInfo_GetString(RMUtilInfo *info, const char *key, const char **str);
 
 /**
 * Get a double value from an info object. Returns 1 if the value was found and is
 * a correctly formatted double, 0 otherwise. the value is placed in 'd'
 */
-int RMUtilInfo_GetDouble(RMUtilInfo *info, const char *key, double *d);
+extern int RMUtilInfo_GetDouble(RMUtilInfo *info, const char *key, double *d);
 
 /*
 * Returns a call reply array's element given by a space-delimited path. E.g.,
 * the path "1 2 3" will return the 3rd element from the 2 element of the 1st
 * element from an array (or NULL if not found)
 */
-RedisModuleCallReply *RedisModule_CallReplyArrayElementByPath(RedisModuleCallReply *rep,
+extern RedisModuleCallReply *RedisModule_CallReplyArrayElementByPath(RedisModuleCallReply *rep,
                                                               const char *path);
 
 #endif

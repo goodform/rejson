@@ -13,7 +13,7 @@
  * particular implementation, but it is consistent throughout all heap-related functions of this header.
  * The elements are compared using cmp.
  */
-void Make_Heap(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *));
+extern void Make_Heap(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *));
 
 
 /* Push element into heap range
@@ -22,7 +22,7 @@ void Make_Heap(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *))
  * A range can be organized into a heap by calling make_heap. After that, its heap properties are preserved if elements
  * are added and removed from it using push_heap and pop_heap, respectively.
  */
-void Heap_Push(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *));
+extern void Heap_Push(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *));
 
 
 /* Pop element from heap range
@@ -33,6 +33,6 @@ void Heap_Push(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *))
  * A range can be organized into a heap by calling make_heap. After that, its heap properties are preserved if elements
  * are added and removed from it using push_heap and pop_heap, respectively.
  */
-void Heap_Pop(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *));
+extern void Heap_Pop(Vector *v, size_t first, size_t last, int (*cmp)(void *, void *));
 
 #endif //__HEAP_H__

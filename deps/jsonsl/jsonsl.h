@@ -71,7 +71,7 @@ typedef int ssize_t;
 #if defined(_WIN32) && defined(JSONSL_DLL)
 #define JSONSL_API __declspec(dllexport)
 #else
-#define JSONSL_API
+#define JSONSL_API extern
 #endif /* _WIN32 */
 
 #endif /* !JSONSL_API */
