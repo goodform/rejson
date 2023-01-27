@@ -4,7 +4,7 @@
 #include <dirent.h>
 #include "minunit.h"
 #include "../src/json_object.h"
-#include <alloc.h>
+#include "rmutil/alloc.h"
 
 #define _JSTR(e) "\"" #e "\""
 

@@ -5,7 +5,7 @@
 #include "../src/object.h"
 #include "../src/path.h"
 #include "minunit.h"
-#include <alloc.h>
+#include "rmutil/alloc.h"
 
 MU_TEST(testNodeString) {
     // Test creation of an empty C string
