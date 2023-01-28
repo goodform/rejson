@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <alloc.h>
+#include "rmutil/alloc.h"
 #include "../src/json_object.h"
 
 int main(int argc, char **argv) {
